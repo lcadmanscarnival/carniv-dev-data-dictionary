@@ -1,0 +1,1092 @@
+<!DOCTYPE html><html lang="en" style="font-size:16px"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Source: launch/generation/launch-rules-backup.js</title><!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><script src="scripts/third-party/hljs.js" defer="defer"></script><script src="scripts/third-party/hljs-line-num.js" defer="defer"></script><script src="scripts/third-party/popper.js" defer="defer"></script><script src="scripts/third-party/tippy.js" defer="defer"></script><script src="scripts/third-party/tocbot.min.js"></script><script>var baseURL="/",locationPathname="";baseURL=(locationPathname=document.location.pathname).substr(0,locationPathname.lastIndexOf("/")+1)</script><link rel="stylesheet" href="styles/clean-jsdoc-theme.min.css"><svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none"><defs><symbol id="copy-icon" viewbox="0 0 488.3 488.3"><g><path d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z"/><path d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z"/></g></symbol><symbol id="search-icon" viewBox="0 0 512 512"><g><g><path d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474    c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323    c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848    S326.847,409.323,225.474,409.323z"/></g></g><g><g><path d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328    c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"/></g></g></symbol><symbol id="font-size-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11.246 15H4.754l-2 5H.6L7 4h2l6.4 16h-2.154l-2-5zm-.8-2L8 6.885 5.554 13h4.892zM21 12.535V12h2v8h-2v-.535a4 4 0 1 1 0-6.93zM19 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></symbol><symbol id="add-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"/></symbol><symbol id="minus-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M5 11h14v2H5z"/></symbol><symbol id="dark-theme-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/></symbol><symbol id="light-theme-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/></symbol><symbol id="reset-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.537 19.567A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10c0 2.136-.67 4.116-1.81 5.74L17 12h3a8 8 0 1 0-2.46 5.772l.997 1.795z"/></symbol><symbol id="down-icon" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path></symbol><symbol id="codepen-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.5 13.202L13 15.535v3.596L19.197 15 16.5 13.202zM14.697 12L12 10.202 9.303 12 12 13.798 14.697 12zM20 10.869L18.303 12 20 13.131V10.87zM19.197 9L13 4.869v3.596l3.5 2.333L19.197 9zM7.5 10.798L11 8.465V4.869L4.803 9 7.5 10.798zM4.803 15L11 19.131v-3.596l-3.5-2.333L4.803 15zM4 13.131L5.697 12 4 10.869v2.262zM2 9a1 1 0 0 1 .445-.832l9-6a1 1 0 0 1 1.11 0l9 6A1 1 0 0 1 22 9v6a1 1 0 0 1-.445.832l-9 6a1 1 0 0 1-1.11 0l-9-6A1 1 0 0 1 2 15V9z"/></symbol><symbol id="close-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></symbol><symbol id="menu-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></symbol></defs></svg></head><body data-theme="dark"><div class="sidebar-container"><div class="sidebar" id="sidebar"><a href="/" class="sidebar-title sidebar-title-anchor">Home</a><div class="sidebar-items-container"><div class="sidebar-section-title with-arrow" data-isopen="false" id="Z77o-PFQoDTZRcwWBpS3p"><div>Classes</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="Adobe%2520Launch.html">Adobe Launch</a></div><div class="sidebar-section-children"><a href="flightOptions.html">flightOptions</a></div><div class="sidebar-section-children"><a href="sessionStorage.html">sessionStorage</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="dnsSwB8l8NWg8pta85ZgF"><div>Namespaces</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="flightOptions.flightDirections.html">flightDirections</a></div><div class="sidebar-section-children"><a href="flightOptions.selectedFlight.html">selectedFlight</a></div><div class="sidebar-section-children"><a href="flightOptions.selectedFlight.options.html">options</a></div><div class="sidebar-section-children"><a href="sessionStorage.analyticsData.html">analyticsData</a></div><div class="sidebar-section-children"><a href="sessionStorage.cruiseInfo.html">cruiseInfo</a></div><div class="sidebar-section-children"><a href="sessionStorage.cruiseInfoPerCabin.html">cruiseInfoPerCabin</a></div><div class="sidebar-section-children"><a href="sessionStorage.optionalAPIRequest.html">optionalAPIRequest</a></div><div class="sidebar-section-children"><a href="sessionStorage.pricingInfo.html">pricingInfo</a></div><div class="sidebar-section-children"><a href="sessionStorage.requestedBasketData.html">requestedBasketData</a></div><div class="sidebar-section-children"><a href="sessionStorage.roomsData.html">roomsData</a></div><div class="sidebar-section-children"><a href="sessionStorage.summarisedInfo.html">summarisedInfo</a></div><div class="sidebar-section-children"><a href="sessionStorage.summarisedInfo.roomDetails.html">roomDetails</a></div><div class="sidebar-section-children"><a href="sessionStorage.tripAddOn.html">tripAddOn</a></div></div></div></div></div><div class="navbar-container" id="VuAckcnZhf"><nav class="navbar"><div class="navbar-left-items"></div><div class="navbar-right-items"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#light-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div><nav></nav></nav></div><div class="toc-container"><div class="toc-content"><span class="bold">On this page</span><div id="eed4d2a0bfd64539bb9df78095dec881"></div></div></div><div class="body-wrapper"><div class="main-content"><div class="main-wrapper"><section id="source-page" class="source-page"><header><h1 id="title" class="has-anchor">launch_generation_launch-rules-backup.js</h1></header><article><pre class="prettyprint source lang-js"><code>/**
+ * @name Adobe Launch#`reset`
+ * @description
+ * &lt;style>
+ * article .description {margin-bottom: 6rem;}
+ * dl.details {display:none;}
+ * h3#\%60reset\%60 {display: none;}
+ * &lt;/style>
+ * &lt;script>
+ * setTimeout(() => {
+ * document.querySelector('#members').innerHTML = 'Data Elements';
+ * document.querySelector('#methods').innerHTML = 'Tags'
+ * document.querySelectorAll('h3.name.has-anchor span.signature').forEach(a => a.innerHTML = '')
+ * }, 150);
+ * &lt;/script>
+ */
+
+/**
+ * @name Adobe Launch#Data Element
+ * @description Data Element
+ */
+
+/**
+ * @method
+ * @name Adobe Launch#(Analytics) Adobe Analytics - Blog - User Interaction
+ * @description
+ * ```
+ * adobe-analytics/src/lib/actions/setVariables.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Data Layer) Product Payment Form [AA]
+ * @description
+ * ```
+ * gcoe-adobe-client-data-layer/src/lib/actions/pushToDatalayer.js
+ * ```
+ */
+/**
+	 * @method
+	 * @name Adobe Launch#(Tool) Evolv AI
+	 * @description
+	 * ```
+	 *  &lt;script
+      src="https://media.evolv.ai/asset-manager/releases/latest/webloader.min.js"
+      data-evolv-environment="dc0ded0fa4"
+      data-evolv-pushstate="true" >
+    &lt;/script>
+
+	  * ```
+	 */
+/**
+ * @method
+ * @name Adobe Launch#(Data Layer) Product Search [AA] - WIP
+ * @description
+ * ```
+ * gcoe-adobe-client-data-layer/src/lib/actions/pushToDatalayer.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Analytics) Adobe Analytics - Page Tracking
+ * @description
+ * ```
+ * adobe-analytics/src/lib/actions/setVariables.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Data Layer) Product Select Cabin [AA]
+ * @description
+ * ```
+ * gcoe-adobe-client-data-layer/src/lib/actions/pushToDatalayer.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Data Layer) Product Select Fare [AA]
+ * @description
+ * ```
+ * gcoe-adobe-client-data-layer/src/lib/actions/pushToDatalayer.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#Adobe Analytics - Search Results - Data Change
+ * @description
+ * ```
+ * adobe-analytics/src/lib/actions/setVariables.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Data Layer) Successful Database Sign Up [AA]
+ * @description
+ * ```
+ * gcoe-adobe-client-data-layer/src/lib/actions/pushToDatalayer.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Data Layer) Flight Selector [AA]
+ * @description
+ * ```
+ * gcoe-adobe-client-data-layer/src/lib/actions/pushToDatalayer.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Data Layer) Sign Up Form Inputs [AA]
+ * @description
+ * ```
+ * gcoe-adobe-client-data-layer/src/lib/actions/pushToDatalayer.js
+ * ```
+ */
+/**
+	 * @method
+	 * @name Adobe Launch#(Tool) OneTrust
+	 * @description
+	 * ```
+	 * &lt;script
+  src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
+  data-document-language="true"
+  type="text/javascript"
+  charset="UTF-8"
+  data-domain-script="26faf404-90ff-4a85-b8bf-922986a02c35"
+>&lt;/script>
+&lt;script>
+  window.OptanonWrapper = function () {
+    const pageName = window._satellite.getVar("data; Page Name");
+
+    const oneTrustRefresh = () => {
+      const referrer = document.referrer;
+      if (referrer) {
+        _satellite.cookie.set("oneTrustRefresh", referrer, { expires: 0.004 });
+      }
+      window.location.reload();
+    };
+
+    const clickEvents = (event) => {
+      // AMEND PREFERENCES button on Cookies Page
+      if (
+        event.target.classList.contains("cta-secondary") &amp;&amp;
+        pageName === "po:en_gb:legalandprivacy:privacy:cookies"
+      ) {
+        event.preventDefault();
+        OneTrust.ToggleInfoDisplay();
+      }
+    };
+
+    OneTrust.OnConsentChanged(function (event) {
+      oneTrustRefresh();
+    });
+
+    if (pageName === "po:en_gb:legalandprivacy:privacy:cookies") {      
+      document.addEventListener("click", clickEvents);
+      const template = `&lt;style> #onetrust-banner-sdk {display: none;} &lt;/style>`;
+      document.head.insertAdjacentHTML('beforeend', template);
+    }
+  };
+&lt;/script>
+	  * ```
+	 */
+/**
+ * @method
+ * @name Adobe Launch#(Tool) Adobe Target
+ * @description
+ * ```
+ * adobe-target-v2/lib/loadTargetOdd.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Data Layer) Product Summary [AA]
+ * @description
+ * ```
+ * gcoe-adobe-client-data-layer/src/lib/actions/pushToDatalayer.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Data Layer) Product Purchase [AA]
+ * @description
+ * ```
+ * gcoe-adobe-client-data-layer/src/lib/actions/pushToDatalayer.js
+ * ```
+ */
+/**
+	 * @method
+	 * @name Adobe Launch#(Marketing) GumGum
+	 * @description
+	 * ```
+	 * try{
+  var randomNumber = _satellite.getVar("data; Random Number");
+  if (randomNumber) {
+      var tag = '&lt;img src="https://px.gumgum.com/ad/conversion?cmp=10408&amp;num=1&amp;rnd=' + randomNumber + '" height="1" width="1" style="display:none;visibility:hidden;" alt="" />'  
+      document.body.insertAdjacentHTML('beforeEnd', tag);
+  } 
+} catch(e){
+  window._satellite.logger.error(event.$rule.name, e);
+}
+	  * ```
+	 */
+/**
+ * @method
+ * @name Adobe Launch#(Data Layer) Product View [AA]
+ * @description
+ * ```
+ * gcoe-adobe-client-data-layer/src/lib/actions/pushToDatalayer.js
+ * ```
+ */
+/**
+	 * @method
+	 * @name Adobe Launch#(Utility) Session Storage Values
+	 * @description
+	 * ```
+	 * const setInSessionStorage = (key, value) => {
+  try {
+    const existsAlready = window.sessionStorage.getItem(key);
+    if (existsAlready) return;
+    if (!value || value === "na") return;
+
+    window.sessionStorage.setItem(key, value);
+  } catch (error) {}
+};
+
+try {
+  const referrer = window._satellite.getVar("data; documentReferrer");
+  const cid = window._satellite.getVar("data; URL Param cid");
+  const s_kwcid = window._satellite.getVar("data; s_kwcid Param");
+  const utm_source = window._satellite.getVar("data; utm_source");
+  const utm_campaign = window._satellite.getVar("data; utm_campaign");
+  const utm_medium = window._satellite.getVar("data; utm_medium");
+  const utm_content = window._satellite.getVar("data; utm_content");
+  const utm_term = window._satellite.getVar("data; utm_term");
+  const pageName = window._satellite.getVar("data; Page Name");
+  const pageUrl = window._satellite.getVar("data; Page URL Redacted");
+  
+  const adGroupId = window._satellite.getVar("data; UTM Ad Group Id");
+  const campaignId = window._satellite.getVar("data; UTM Campaign Id");
+  const gclid = window._satellite.getVar("data; UTM GCLID");
+  
+  const pageType = window._satellite.getVar("data; Page Type");
+  const queryString = window._satellite.getVar("data; Query String");
+
+  if (!referrer.includes("pocruises")) {
+    // No self referrals allowed.
+    setInSessionStorage("cuk.launch.documentReferrer", referrer);
+  }
+
+  if (/^(po-|cu-)/i.test(utm_term)) {
+    // Email link has account number as utm_term
+    setInSessionStorage("cuk.launch.bbw_urn", utm_term.toLowerCase());
+  }
+
+  setInSessionStorage("cuk.launch.cid", cid);
+  setInSessionStorage("cuk.launch.s_kwcid", s_kwcid);
+  setInSessionStorage("cuk.launch.utm_source", utm_source);
+  setInSessionStorage("cuk.launch.utm_campaign", utm_campaign);
+  setInSessionStorage("cuk.launch.utm_medium", utm_medium);
+  setInSessionStorage("cuk.launch.utm_content", utm_content);
+  setInSessionStorage("cuk.launch.utm_term", utm_term);
+  setInSessionStorage("cuk.launch.entry.page", pageName);
+  setInSessionStorage("cuk.launch.entry.pageUrl", pageUrl);
+  
+  setInSessionStorage("cuk.launch.entry.adGroupId", adGroupId);
+  setInSessionStorage("cuk.launch.entry.campaignId", campaignId);
+  setInSessionStorage("cuk.launch.entry.gclid", gclid);
+  
+  setInSessionStorage("cuk.launch.entry.pageType", pageType);
+  setInSessionStorage("cuk.launch.entry.queryString", queryString);
+} catch (e) {
+  return;
+}
+
+return true;
+
+	  * ```
+	 */
+/**
+ * @method
+ * @name Adobe Launch#(Data Layer) Product Room Selector [AA]
+ * @description
+ * ```
+ * gcoe-adobe-client-data-layer/src/lib/actions/pushToDatalayer.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Analytics) Adobe Analytics - ErrorTrack (Direct Call)
+ * @description
+ * ```
+ * adobe-analytics/src/lib/actions/setVariables.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Analytics) Evolv AI - Adobe Analytics [GB]
+ * @description
+ * ```
+ * adobe-analytics/src/lib/actions/setVariables.js
+ * ```
+ */
+/**
+	 * @method
+	 * @name Adobe Launch#gtag - Config [GA4]
+	 * @description
+	 * ```
+	 * &lt;!-- Google tag (gtag.js) -->
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-0QKETQVGF7">&lt;/script>
+&lt;script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('set', { 'currency': 'GBP' });
+
+  gtag('consent', 'default', {  
+      // Deny consent for ad_storage   
+      'ad_storage': 'denied',  
+      // Deny consent for analytics_storage  
+      'analytics_storage': 'denied',
+      'wait_for_update': 1500
+    })
+  
+  gtag('config', _satellite.getVar('data; GA4 Property ID'));
+  
+  //set GA
+  if (_satellite.cookie.get("OptanonConsent").indexOf('C0002:1') > -1 ) {
+    gtag('config', _satellite.getVar('data; GA4 Property ID'), {
+      'send_page_view': false,
+      'page_location':_satellite.getVar('data; GA - Add UTM'),
+      'dimension2':_satellite.getVar('data; Market'),
+      'dimension14':_satellite.getVar('data; Page Type'),
+      'dimension15':_satellite.getVar('data; URL Param cid')    
+    });
+  }  
+&lt;/script>
+
+	  * ```
+	 */
+/**
+ * @method
+ * @name Adobe Launch#(Analytics) Adobe Analytics - Product Tracking
+ * @description
+ * ```
+ * adobe-analytics/src/lib/actions/setVariables.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Analytics) Adobe Analytics - iCalendar Click
+ * @description
+ * ```
+ * adobe-analytics/src/lib/actions/setVariables.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Analytics) Adobe Analytics - Link Tracking
+ * @description
+ * ```
+ * adobe-analytics/src/lib/actions/setVariables.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Data Layer) Product Guest Details Form [AA]
+ * @description
+ * ```
+ * gcoe-adobe-client-data-layer/src/lib/actions/pushToDatalayer.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Data Layer) Sign Up Form Submit [AA]
+ * @description
+ * ```
+ * gcoe-adobe-client-data-layer/src/lib/actions/pushToDatalayer.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Analytics) Adobe Analytics - Legacy Link Tracking
+ * @description
+ * ```
+ * adobe-analytics/src/lib/actions/setVariables.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Data Layer) Product Cabin &amp; Fare Selected [AA]
+ * @description
+ * ```
+ * gcoe-adobe-client-data-layer/src/lib/actions/pushToDatalayer.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Tool) Quantum Metric
+ * @description
+ * ```
+ * quantum-metric/src/lib/actions/startCapture.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Data Layer) Guest Selection [AA]
+ * @description
+ * ```
+ * gcoe-adobe-client-data-layer/src/lib/actions/pushToDatalayer.js
+ * ```
+ */
+/**
+ * @method
+ * @name Adobe Launch#(Data Layer) Product Checkout [AA]
+ * @description
+ * ```
+ * gcoe-adobe-client-data-layer/src/lib/actions/pushToDatalayer.js
+ * ```
+ */
+/**
+	 * @method
+	 * @name Adobe Launch#(Analytics) (Data) Adestra; Payment - Abandon Basket Entry [GB] Iteration 1 - Opt-Outs
+	 * @description
+	 * ```
+	 * function dataLayerPush(e) {
+  (window.adobeDataLayer = window.adobeDataLayer || []), console.log(JSON.stringify(e, null, 4));
+}
+function isJson(e) {
+  if (!e) return !1;
+  try {
+    JSON.parse(e);
+  } catch (e) {
+    return !1;
+  }
+  return !0;
+}
+let optOuts = [];
+isJson(sessionStorage.getItem("abandonedBasketOptOuts")) &amp;&amp; (optOuts = JSON.parse(sessionStorage.getItem("abandonedBasketOptOuts")));
+try {
+  if (_satellite.getVar("data; Abandonment") == window._satellite.getVar("data; Cruise Id")) return;
+  console.log("ud83duded2 Abandoned Basket Fired");
+  var quantity,
+    totalRevenueFormatted,
+    totalRevenue,
+    email = window._satellite.getVar("data; Email"),
+    cruiseId = window._satellite.getVar("data; Cruise Id"),
+    firstName = window._satellite.getVar("data; First Name"),
+    lastName = window._satellite.getVar("data; Last Name"),
+    title = window._satellite.getVar("data; Title"),
+    destination = window._satellite.getVar("data; Destination Name"),
+    shipName = window._satellite.getVar("data; Ship Name"),
+    embarkDate = window._satellite.getVar("data; Embark Date"),
+    duration = window._satellite.getVar("data; Duration"),
+    productName = window._satellite.getVar("data; Product Name"),
+    cleanProductName = window._satellite.getVar("data; Clean Product Name"),
+    titleCapitalised = window._satellite.getVar("data; Title Capitalised"),
+    embarkDateFormatted = window._satellite.getVar("data; Embark Date Formatted"),
+    token = window._satellite.getVar("data; Token"),
+    account = window._satellite.getVar("data; Adestra Account Id"),
+    capture = window._satellite.getVar("data; Adestra Capture Id");
+  console.log("ud83duded2 Abandoned Basket - Opted out"), (quantity = 0), (totalRevenueFormatted = 0), (totalRevenue = 0);
+  try {
+    s.tl(!0, "o", "Abandoned Basket", {
+      useBeacon: !0,
+      linkTrackEvents: s.apl("event191"),
+      linkTrackVars: s.apl(s.linkTrackVars, "events,eVar146"),
+      eVar146: "abandonedBasketOptIn: false;",
+      events: s.apl("event191"),
+    });
+  } catch (e) {}
+  var record = {
+      cruise_code: encodeURIComponent(cruiseId),
+      ship_name: encodeURIComponent(shipName),
+      duration: encodeURIComponent(duration),
+      embark_date: encodeURIComponent(embarkDate),
+      embark_date_formatted: encodeURIComponent(embarkDate),
+      disembark_date: encodeURIComponent(embarkDateFormatted),
+      destination_name: encodeURIComponent(destination),
+      title: encodeURIComponent(title),
+      title_capitalised: encodeURIComponent(titleCapitalised),
+      first_name: encodeURIComponent(firstName),
+      last_name: encodeURIComponent(lastName),
+      product_name: encodeURIComponent(productName),
+      order_value: encodeURIComponent(totalRevenueFormatted),
+    },
+    item = { ref: encodeURIComponent(cruiseId), name: encodeURIComponent(cleanProductName), value: encodeURIComponent(totalRevenue), quantity: quantity },
+    encodedRecord = JSON.stringify(record).replace(/"/gi, "%22"),
+    encodedItem = JSON.stringify(item).replace(/"/gi, "%22");
+  _satellite.setVar("data; Abandonment", window._satellite.getVar("data; Cruise Id"));
+  try {
+    var imageSrc =
+        "https://pocruises.msgfocus.com/q/basket?action=update&amp;account_id=" +
+        account +
+        "&amp;capture_id=" +
+        capture +
+        "&amp;token=" +
+        token +
+        "&amp;email=" +
+        email +
+        "&amp;order_value=" +
+        totalRevenue +
+        "&amp;record=" +
+        encodedRecord +
+        "&amp;item=" +
+        encodedItem,
+      imageTag = '&lt;img class="abandoned-basket-img-tag" height="1" width="1" style="display:none;" alt="" src="' + imageSrc + '"/>';
+    document.querySelector(".abandoned-basket-img-tag") || document.body.insertAdjacentHTML("beforeEnd", imageTag), console.log("ud83duded2 Abandoned Basket execution successful");
+  } catch (e) {
+    console.log("ud83duded2 Abandoned Basket execution unsuccessful");
+    try {
+      s.tl(!0, "o", "Abandoned Basket", { useBeacon: !0, linkTrackVars: s.apl(s.linkTrackVars, "events,eVar249"), eVar249: "Abandoned Basket execution unsuccessful" });
+    } catch (e) {}
+    console.log(e);
+  }
+} catch (e) {
+  console.log("ud83duded2 Abandoned Basket unsuccessful");
+  try {
+    s.tl(!0, "o", "Abandoned Basket", { useBeacon: !0, linkTrackVars: s.apl(s.linkTrackVars, "events,eVar249"), eVar249: "Abandoned Basket unsuccessful" });
+  } catch (e) {}
+  console.log(e);
+}
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Analytics) (Data) Adestra; Payment - Abandon Basket [GB] - Scenario Tracking
+	 * @description
+	 * ```
+	 * let scenario = document.querySelector("[data-scenario]").getAttribute("data-scenario");
+try {
+  s.tl(!0, "o", "Abandoned Basket Return", { useBeacon: !0, linkTrackVars: s.apl(s.linkTrackVars, "events,eVar140"), eVar140: scenario, events: s.apl("event192") });
+} catch (e) {}
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Marketing) GumGum - Search Results
+	 * @description
+	 * ```
+	 * let sendTo = "";
+window.location.hash.includes("destinationIds=Short-Break&amp;")
+  ? (sendTo = "DC-11989611/srch/srch-bre+standard")
+  : window.location.hash.includes("destinationIds=Mediterranean&amp;")
+  ? (sendTo = "DC-11989611/srch/searc0+standard")
+  : window.location.hash.includes("destinationIds=Caribbean&amp;")
+  ? (sendTo = "DC-11989611/srch/srch-car+standard")
+  : window.location.hash.includes("destinationIds=Norwegian-Fjords&amp;") &amp;&amp; window.location.hash.includes("cruisePromoIds=ELX&amp;") &amp;&amp; (sendTo = "DC-11989611/srch/srch-nor+standard"),
+  sendTo &amp;&amp; gtag("event", "conversion", { allow_custom_scripts: !0, send_to: floodlight });
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Marketing) DV360
+	 * @description
+	 * ```
+	 * var pageUrl = window._satellite.getVar("data; Page URL Redacted"),
+  randomNumber = window._satellite.getVar("data; Random Number");
+if (pageUrl &amp;&amp; randomNumber) {
+  var tag =
+    '&lt;img src="https://ad.doubleclick.net/ddm/activity/src=10754595;type=invmedia;cat=pocru0;u1=' +
+    pageUrl +
+    ";dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ord=" +
+    randomNumber +
+    '?" width="1" height="1" alt="">';
+  document.body.insertAdjacentHTML("beforeEnd", tag);
+}
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Marketing) Bing UET - Purchase
+	 * @description
+	 * ```
+	 * (window.uetq = window.uetq || []),
+  window.uetq.push("event", "booking", {
+    event_category: "conversion",
+    event_label: window._satellite.getVar("data; Cruise Id"),
+    event_value: window._satellite.getVar("data; Total Revenue"),
+    revenue_value: window._satellite.getVar("data; Total Revenue"),
+    currency: window._satellite.getVar("data; Currency"),
+  });
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Marketing) Facebook
+	 * @description
+	 * ```
+	 * !(function (e, t, n, c, o, a, f) {
+  e.fbq ||
+    ((o = e.fbq =
+      function () {
+        o.callMethod ? o.callMethod.apply(o, arguments) : o.queue.push(arguments);
+      }),
+    e._fbq || (e._fbq = o),
+    (o.push = o),
+    (o.loaded = !0),
+    (o.version = "2.0"),
+    (o.queue = []),
+    ((a = t.createElement(n)).async = !0),
+    (a.src = c),
+    (f = t.getElementsByTagName(n)[0]).parentNode.insertBefore(a, f));
+})(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js"),
+  fbq("init", "259091014985912"),
+  fbq("track", "PageView");
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Utility) Link Tracking Patch
+	 * @description
+	 * ```
+	 * const cleanValue = (t) => {
+    try {
+      return new DOMParser().parseFromString(t, "text/html").documentElement.textContent.replace(/ss+/g, " ");
+    } catch (t) {}
+  },
+  getLinkText = (t) => {
+    try {
+      const e = t.getAttribute("data-linktext") || t.getAttribute("data-link-text") || t.getAttribute("data-linktext-temp");
+      return cleanValue(e);
+    } catch (t) {}
+  },
+  getComponentName = (t) => {
+    try {
+      const e = t.closest("[data-type], [data-region], [data-componentname]"),
+        a = e.dataset.type || e.dataset.region || e.dataset.componentname;
+      return cleanValue(a);
+    } catch (t) {}
+  };
+try {
+  const t = event.element,
+    e = getLinkText(t),
+    a = { linkText: e, componentName: getComponentName(t), linkPage: _satellite.getVar("data; Page Name") };
+  window.sessionStorage.setItem("cuk.launch.linkTracking.v2", JSON.stringify(a)), "true" == t.getAttribute("data-beacon") &amp;&amp; window._satellite.track("linkTrack");
+} catch (t) {
+  _satellite.logger.log(t);
+}
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#Google Analytics - GA4 - Pageview (All Pages)
+	 * @description
+	 * ```
+	 * function runGtag() {
+  gtag("event", "page_view", { send_to: _satellite.getVar("data; GA4 Property ID"), dimension11: _satellite.getVar("GA Hit Timestamp") }),
+    "cruiseDetailsPage" == window.configs.template &amp;&amp;
+      gtag("event", "view_item", {
+        send_to: _satellite.getVar("data; GA4 Property ID"),
+        non_interaction: !0,
+        items: _satellite.getVar("data; GA Item Array - ProductView"),
+        dimension11: _satellite.getVar("data; GA Hit Timestamp"),
+      }),
+    "cruiseDetailsSummaryPage" == window.configs.template &amp;&amp;
+      gtag("event", "add_to_cart", {
+        send_to: _satellite.getVar("data; GA4 Property ID"),
+        non_interaction: !0,
+        items: _satellite.getVar("data; GA Item Array - ProductView"),
+        dimension11: _satellite.getVar("data; GA Hit Timestamp"),
+      });
+}
+try {
+  return runGtag();
+} catch (t) {
+  return null;
+}
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Data) Evolv AI - Mouseflow [GB]
+	 * @description
+	 * ```
+	 * try {
+  const e = event.message.evolv.project,
+    o = e.match(/^CPOC-d+/)[0],
+    t = event.message.evolv.combination;
+  if (e &amp;&amp; t) {
+    const e = o + " > C" + t;
+    (window._mfq = window._mfq || []), window._mfq.push(["tag", o]), window._mfq.push(["tag", e]);
+  }
+} catch (e) {}
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Data Layer) iFrame 360 Viewer [AA]
+	 * @description
+	 * ```
+	 * function dataLayerPush(a) {
+  (window.adobeDataLayer = window.adobeDataLayer || []), window.adobeDataLayer.push(a);
+}
+try {
+  window.addEventListener(
+    "message",
+    function (a) {
+      "https://tours.pocruises.com" === a.origin &amp;&amp; dataLayerPush(a.data);
+    },
+    !1,
+  );
+} catch (a) {}
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#Google Analytics - Event - Purchase (Direct Call) - GA4
+	 * @description
+	 * ```
+	 * try {
+  gtag("event", "purchase", {
+    send_to: _satellite.getVar("data; GA4 Property ID"),
+    non_interaction: !0,
+    transaction_id: _satellite.getVar("data; Transaction Id"),
+    affiliation: _satellite.getVar("data; Cruise Id"),
+    value: _satellite.getVar("data; Total Revenue"),
+    items: _satellite.getVar("data; GA Item Array - Purchase"),
+  });
+} catch (t) {
+  return null;
+}
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Data) Evolv AI - Usabilla [GB]
+	 * @description
+	 * ```
+	 * try {
+  const a = event.message.evolv.project,
+    e = a.match(/^CPOC-d+/)[0],
+    t = event.message.evolv.combination,
+    u = {};
+  a &amp;&amp; e &amp;&amp; ((u[e] = t), (window.usabillaDataQueue = window.usabillaDataQueue || []), window.usabillaDataQueue.push(u));
+} catch (a) {}
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Marketing) Pinterest - Purchase
+	 * @description
+	 * ```
+	 * var cruiseId = window._satellite.getVar("data; Cruise Id"),
+  totalRevenue = window._satellite.getVar("data; Total Revenue");
+if (cruiseId &amp;&amp; totalRevenue) {
+  var tag =
+    '&lt;img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/v3/?tid=2612836145117&amp;event=checkout&amp;ed[value]=' +
+    totalRevenue +
+    '&amp;ed[currency]=GBP&amp;ed[order_quantity]=1&amp;noscript=1"/>';
+  document.body.insertAdjacentHTML("beforeEnd", tag);
+}
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Marketing) MiQ - Purchase
+	 * @description
+	 * ```
+	 * var orderId = window._satellite.getVar("data; Transaction Id"),
+  familyFlag = window._satellite.getVar("data; Family Flag"),
+  roomType = window._satellite.getVar("data; Room Type"),
+  roomCategory = window._satellite.getVar("data; Room Category"),
+  flightCruiseFlag = window._satellite.getVar("data; Flight Flag"),
+  fareType = window._satellite.getVar("data; Fare Type"),
+  cruiseId = window._satellite.getVar("data; Cruise Id"),
+  guestCount = window._satellite.getVar("data; Guest Count"),
+  ship = window._satellite.getVar("data; Ship"),
+  embarkDate = window._satellite.getVar("data; Embark Date"),
+  embarkPort = window._satellite.getVar("data; Embark Port"),
+  duration = window._satellite.getVar("data; Duration"),
+  destinationName = window._satellite.getVar("data; Destination Name"),
+  currency = window._satellite.getVar("data; Currency"),
+  totalRevenue = window._satellite.getVar("data; Total Revenue");
+if (orderId &amp;&amp; totalRevenue) {
+  var img = document.createElement("img");
+  (img.width = "1"),
+    (img.height = "1"),
+    (img.style = "display:none;"),
+    (img.src =
+      "https://secure.adnxs.com/px?id=1461656&amp;seg=25987639&amp;order_id=" +
+      encodeURI(orderId) +
+      "&amp;value=" +
+      encodeURI(totalRevenue) +
+      "&amp;redir=https%3A%2F%2Fpixel.mediaiqdigital.com%2Fpixel%3Fu1%3D" +
+      encodeURI(familyFlag) +
+      "%26u2%3D" +
+      encodeURI(roomType) +
+      "%26u3%3D" +
+      encodeURI(roomCategory) +
+      "%26u4%3D" +
+      encodeURI(flightCruiseFlag) +
+      "%26u5%3D" +
+      encodeURI(fareType) +
+      "%26u6%3D" +
+      encodeURI(cruiseId) +
+      "%26u7%3D" +
+      encodeURI(guestCount) +
+      "%26u8%3D" +
+      encodeURI(ship) +
+      "%26u9%3D" +
+      encodeURI(embarkDate) +
+      "%26u10%3D" +
+      encodeURI(embarkPort) +
+      "%26u11%3D" +
+      encodeURI(duration) +
+      "%26u12%3D" +
+      encodeURI(destinationName) +
+      "%26u13%3D" +
+      encodeURI(orderId) +
+      "%26u14%3D" +
+      encodeURI(currency) +
+      "%26u15%3D" +
+      encodeURI(totalRevenue) +
+      "%26pixel_id%3D1461656%26uid%3D%24%7BUID%7D&amp;t=2"),
+    document.body.insertAdjacentHTML("beforeEnd", img);
+}
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Marketing) Bing UET
+	 * @description
+	 * ```
+	 * !(function (e, a, t, n, o) {
+  var c, r, d;
+  (e[o] = e[o] || []),
+    (c = function () {
+      var a = { ti: "5103194" };
+      (a.q = e[o]), (e[o] = new UET(a)), e[o].push("pageLoad");
+    }),
+    ((r = a.createElement(t)).src = n),
+    (r.async = 1),
+    (r.onload = r.onreadystatechange =
+      function () {
+        var e = this.readyState;
+        (e &amp;&amp; "loaded" !== e &amp;&amp; "complete" !== e) || (c(), (r.onload = r.onreadystatechange = null));
+      }),
+    (d = a.getElementsByTagName(t)[0]).parentNode.insertBefore(r, d);
+})(window, document, "script", "//bat.bing.com/bat.js", "uetq");
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Analytics) Adestra - Payment Page Opt-Ins
+	 * @description
+	 * ```
+	 * function dataLayerPush(e) {
+  (window.adobeDataLayer = window.adobeDataLayer || []), console.log(JSON.stringify(e, null, 4));
+}
+function isJson(e) {
+  if (!e) return !1;
+  try {
+    JSON.parse(e);
+  } catch (e) {
+    return !1;
+  }
+  return !0;
+}
+let optOuts = [];
+isJson(sessionStorage.getItem("abandonedBasketOptOuts")) &amp;&amp; (optOuts = JSON.parse(sessionStorage.getItem("abandonedBasketOptOuts")));
+try {
+  if (_satellite.getVar("data; Abandonment") == window._satellite.getVar("data; Cruise Id")) return;
+  console.log("ud83duded2 Abandoned Basket Fired");
+  var quantity,
+    totalRevenueFormatted,
+    totalRevenue,
+    basketId = sessionStorage.basketId.replaceAll('"', ""),
+    personId = window._satellite.cookie.get("personId"),
+    email = window._satellite.getVar("data; Email"),
+    cruiseId = window._satellite.getVar("data; Cruise Id"),
+    firstName = window._satellite.getVar("data; First Name"),
+    lastName = window._satellite.getVar("data; Last Name"),
+    title = window._satellite.getVar("data; Title"),
+    destination = window._satellite.getVar("data; Destination Name"),
+    shipName = window._satellite.getVar("data; Ship Name"),
+    embarkDate = window._satellite.getVar("data; Embark Date"),
+    duration = window._satellite.getVar("data; Duration"),
+    productName = window._satellite.getVar("data; Product Name"),
+    cleanProductName = window._satellite.getVar("data; Clean Product Name"),
+    titleCapitalised = window._satellite.getVar("data; Title Capitalised"),
+    embarkDateFormatted = window._satellite.getVar("data; Embark Date Formatted"),
+    token = basketId,
+    account = window._satellite.getVar("data; Adestra Account Id"),
+    capture = window._satellite.getVar("data; Adestra Capture Id");
+  console.log("ud83duded2 Abandoned Basket - Opted in"),
+    (quantity = 1),
+    (totalRevenueFormatted = window._satellite.getVar("data; Total Revenue Formatted")),
+    (totalRevenue = window._satellite.getVar("data; Total Revenue"));
+  try {
+    s.tl(!0, "o", "Abandoned Basket", {
+      useBeacon: !0,
+      linkTrackEvents: s.apl("event190"),
+      linkTrackVars: s.apl(s.linkTrackVars, "events,eVar146"),
+      eVar146: "abandonedBasketOptIn: true;",
+      events: s.apl("event190"),
+    });
+  } catch (e) {}
+  if (!basketId) return s.tl(!0, "o", "Abandoned Basket", { useBeacon: !0, linkTrackVars: s.apl(s.linkTrackVars, "eVar249"), eVar249: "basketId Not Available" });
+  if (!personId) return s.tl(!0, "o", "Abandoned Basket", { useBeacon: !0, linkTrackVars: s.apl(s.linkTrackVars, "eVar249"), eVar249: "personId Not Available" });
+  var record = {
+      cruise_code: encodeURIComponent(cruiseId),
+      ship_name: encodeURIComponent(shipName),
+      duration: encodeURIComponent(duration),
+      embark_date: encodeURIComponent(embarkDate),
+      embark_date_formatted: encodeURIComponent(embarkDate),
+      disembark_date: encodeURIComponent(embarkDateFormatted),
+      destination_name: encodeURIComponent(destination),
+      title: encodeURIComponent(title),
+      title_capitalised: encodeURIComponent(titleCapitalised),
+      first_name: encodeURIComponent(firstName),
+      last_name: encodeURIComponent(lastName),
+      product_name: encodeURIComponent(productName),
+      order_value: encodeURIComponent(totalRevenueFormatted),
+    },
+    item = { ref: encodeURIComponent(cruiseId), name: encodeURIComponent(cleanProductName), value: encodeURIComponent(totalRevenue), quantity: quantity },
+    encodedRecord = JSON.stringify(record).replace(/"/gi, "%22"),
+    encodedItem = JSON.stringify(item).replace(/"/gi, "%22");
+  _satellite.setVar("data; Abandonment", window._satellite.getVar("data; Cruise Id"));
+  try {
+    var imageSrc =
+        "https://pocruises.msgfocus.com/q/basket?action=update&amp;account_id=" +
+        account +
+        "&amp;capture_id=" +
+        capture +
+        "&amp;token=" +
+        token +
+        "&amp;session=" +
+        personId +
+        "&amp;email=" +
+        email +
+        "&amp;order_value=" +
+        totalRevenue +
+        "&amp;record=" +
+        encodedRecord +
+        "&amp;item=" +
+        encodedItem,
+      imageTag = '&lt;img class="abandoned-basket-img-tag" height="1" width="1" style="display:none;" alt="" src="' + imageSrc + '"/>';
+    document.querySelector(".abandoned-basket-img-tag") || document.body.insertAdjacentHTML("beforeEnd", imageTag), console.log("ud83duded2 Abandoned Basket execution successful");
+  } catch (e) {
+    console.log("ud83duded2 Abandoned Basket execution unsuccessful");
+    try {
+      s.tl(!0, "o", "Abandoned Basket", { useBeacon: !0, linkTrackVars: s.apl(s.linkTrackVars, "events,eVar249"), eVar249: "Abandoned Basket execution unsuccessful" });
+    } catch (e) {}
+    console.log(e);
+  }
+} catch (e) {
+  console.log("ud83duded2 Abandoned Basket unsuccessful");
+  try {
+    s.tl(!0, "o", "Abandoned Basket", { useBeacon: !0, linkTrackVars: s.apl(s.linkTrackVars, "events,eVar249"), eVar249: "Abandoned Basket unsuccessful" });
+  } catch (e) {}
+  console.log(e);
+}
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Analytics) Adestra; Purchase - Abandon Basket Nullify [GB]
+	 * @description
+	 * ```
+	 * try {
+  var basketId = sessionStorage.basketId.replaceAll('"', ""),
+    token = basketId,
+    account = window._satellite.getVar("data; Adestra Account Id"),
+    capture = window._satellite.getVar("data; Adestra Capture Id");
+  if (account &amp;&amp; capture &amp;&amp; token) {
+    var tag = "https://pocruises.msgfocus.com/q/basket?action=purchase&amp;account_id=" + account + "&amp;capture_id=" + capture + "&amp;token=" + token,
+      imageTag = '&lt;img height="1" width="1" style="display:none;" alt="" src="' + tag + '"/>';
+    document.body.insertAdjacentHTML("beforeEnd", imageTag);
+  }
+} catch (t) {}
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Marketing) GumGum &amp; MiQ - Destinations
+	 * @description
+	 * ```
+	 * let sendto = "";
+switch (document.location.pathname) {
+  case "/cruise-destinations/caribbean":
+    sendto = "DC-11989611/destn/destn-ca+standard";
+    break;
+  case "/cruises-from-southampton":
+    sendto = "DC-11989611/embark/emb-soc+standard";
+    break;
+  case "/short-breaks":
+    sendto = "DC-11989611/destn/destn-br+standard";
+    break;
+  case "/cruise-destinations/norwegian-fjords":
+    sendto = "DC-11989611/destn/destn-nw+standard";
+    break;
+  case "/cruise-destinations/mediterranean":
+    sendto = "DC-11989611/destn/destn-md+standard";
+    break;
+  case "/deals/extra-onboard-spending-money":
+    sendto = "DC-11989611/deals/deal-spe+standard";
+    break;
+  case "/":
+    sendto = "DC-11989611/home/home+standard";
+}
+sendto &amp;&amp; gtag("event", "conversion", { allow_custom_scripts: !0, send_to: sendto });
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Marketing) Facebook - Purchase
+	 * @description
+	 * ```
+	 * !(function (e, t, n, a, c, r, o) {
+  e.fbq ||
+    ((c = e.fbq =
+      function () {
+        c.callMethod ? c.callMethod.apply(c, arguments) : c.queue.push(arguments);
+      }),
+    e._fbq || (e._fbq = c),
+    (c.push = c),
+    (c.loaded = !0),
+    (c.version = "2.0"),
+    (c.queue = []),
+    ((r = t.createElement(n)).async = !0),
+    (r.src = a),
+    (o = t.getElementsByTagName(n)[0]).parentNode.insertBefore(r, o));
+})(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js"),
+  fbq("init", "259091014985912"),
+  fbq("track", "Purchase", { currency: window.parent._satellite.getVar("data; Currency"), value: window.parent._satellite.getVar("data; Total Revenue") });
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Marketing) Pinterest
+	 * @description
+	 * ```
+	 * &lt;img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/v3/?tid=2612836145117&amp;event=init&amp;noscript=1" />;
+
+	  * ```
+	 */
+/**
+	 * @method
+	 * @name Adobe Launch#(Tool) MouseFlow
+	 * @description
+	 * ```
+	 * function waitForMouseFlowLoad() {
+  if (window.mouseflow &amp;&amp; "function" == typeof window.mouseflow.getSessionId &amp;&amp; window.mouseflow.getSessionId())
+    try {
+      (window.usabillaDataQueue = window.usabillaDataQueue || []),
+        window.usabillaDataQueue.push({ mouseflow: `https://app.mouseflow.com/websites/${window.mouseflow.websiteId}/recordings/${window.mouseflow.getSessionId()}/play` });
+    } catch (e) {}
+  else setTimeout(waitForMouseFlowLoad, 1e3);
+}
+window._mfq = window._mfq || [];
+const mf = document.createElement("script");
+(mf.type = "text/javascript"), (mf.async = !0), (mf.src = "//cdn.mouseflow.com/projects/8879a2b0-4a84-4763-a095-1bec3491c42a.js"), document.getElementsByTagName("head")[0].appendChild(mf);
+const marnierId = window._satellite.getVar("data; Marnier Id") || "",
+  transactionId = window._satellite.getVar("data; Transaction Id") || "",
+  cruiseId = window._satellite.getVar("data; Cruise Id") || "",
+  pageType = window._satellite.getVar("data; Page Type") || "",
+  pageName = window._satellite.getVar("data; Page Name") || "",
+  cloudId = window._satellite.getVar("data; Marketing Cloud Id") || "";
+(window._mfq = window._mfq || []),
+  window._mfq.push(["setVariable", "marinerID", marnierId]),
+  window._mfq.push(["setVariable", "bookingNumber", transactionId]),
+  window._mfq.push(["setVariable", "voyageNumber", cruiseId]),
+  window._mfq.push(["setVariable", "aemTemplateName", pageType]),
+  window._mfq.push(["setVariable", "adobePageName", pageName]),
+  window._mfq.push(["setVariable", "marketingCloudId", cloudId]),
+  setTimeout(waitForMouseFlowLoad, 1e3);
+
+	  * ```
+	 */
+</code></pre></article></section></div></div></div><div class="search-container" id="PkfLWpAbet" style="display:none"><div class="wrapper" id="iCxFxjkHbP"><button class="icon-button search-close-button" id="VjLlGakifb" aria-label="close search"><svg><use xlink:href="#close-icon"></use></svg></button><div class="search-box-c"><svg><use xlink:href="#search-icon"></use></svg> <input type="text" id="vpcKVYIppa" class="search-input" placeholder="Search..." autofocus></div><div class="search-result-c" id="fWwVHRuDuN"><span class="search-result-c-text">Type anything to view search result</span></div></div></div><div class="mobile-menu-icon-container"><button class="icon-button" id="mobile-menu" data-isopen="false" aria-label="menu"><svg><use xlink:href="#menu-icon"></use></svg></button></div><div id="mobile-sidebar" class="mobile-sidebar-container"><div class="mobile-sidebar-wrapper"><a href="/" class="sidebar-title sidebar-title-anchor">Home</a><div class="mobile-nav-links"></div><div class="mobile-sidebar-items-c"><div class="sidebar-section-title with-arrow" data-isopen="false" id="Z77o-PFQoDTZRcwWBpS3p"><div>Classes</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="Adobe%2520Launch.html">Adobe Launch</a></div><div class="sidebar-section-children"><a href="flightOptions.html">flightOptions</a></div><div class="sidebar-section-children"><a href="sessionStorage.html">sessionStorage</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="dnsSwB8l8NWg8pta85ZgF"><div>Namespaces</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="flightOptions.flightDirections.html">flightDirections</a></div><div class="sidebar-section-children"><a href="flightOptions.selectedFlight.html">selectedFlight</a></div><div class="sidebar-section-children"><a href="flightOptions.selectedFlight.options.html">options</a></div><div class="sidebar-section-children"><a href="sessionStorage.analyticsData.html">analyticsData</a></div><div class="sidebar-section-children"><a href="sessionStorage.cruiseInfo.html">cruiseInfo</a></div><div class="sidebar-section-children"><a href="sessionStorage.cruiseInfoPerCabin.html">cruiseInfoPerCabin</a></div><div class="sidebar-section-children"><a href="sessionStorage.optionalAPIRequest.html">optionalAPIRequest</a></div><div class="sidebar-section-children"><a href="sessionStorage.pricingInfo.html">pricingInfo</a></div><div class="sidebar-section-children"><a href="sessionStorage.requestedBasketData.html">requestedBasketData</a></div><div class="sidebar-section-children"><a href="sessionStorage.roomsData.html">roomsData</a></div><div class="sidebar-section-children"><a href="sessionStorage.summarisedInfo.html">summarisedInfo</a></div><div class="sidebar-section-children"><a href="sessionStorage.summarisedInfo.roomDetails.html">roomDetails</a></div><div class="sidebar-section-children"><a href="sessionStorage.tripAddOn.html">tripAddOn</a></div></div></div><div class="mobile-navbar-actions"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#light-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div></div></div><script type="text/javascript" src="scripts/core.min.js"></script><script src="scripts/search.min.js" defer="defer"></script><script src="scripts/third-party/fuse.js" defer="defer"></script><script type="text/javascript">var tocbotInstance=tocbot.init({tocSelector:"#eed4d2a0bfd64539bb9df78095dec881",contentSelector:".main-content",headingSelector:"h1, h2, h3",hasInnerContainers:!0,scrollContainer:".main-content",headingsOffset:130,onClick:bringLinkToView})</script></body></html>

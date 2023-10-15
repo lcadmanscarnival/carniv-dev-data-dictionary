@@ -1,0 +1,2334 @@
+<!DOCTYPE html><html lang="en" style="font-size:16px"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Source: launch/launch-data-elements-docs.js</title><!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><script src="scripts/third-party/hljs.js" defer="defer"></script><script src="scripts/third-party/hljs-line-num.js" defer="defer"></script><script src="scripts/third-party/popper.js" defer="defer"></script><script src="scripts/third-party/tippy.js" defer="defer"></script><script src="scripts/third-party/tocbot.min.js"></script><script>var baseURL="/",locationPathname="";baseURL=(locationPathname=document.location.pathname).substr(0,locationPathname.lastIndexOf("/")+1)</script><link rel="stylesheet" href="styles/clean-jsdoc-theme.min.css"><svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none"><defs><symbol id="copy-icon" viewbox="0 0 488.3 488.3"><g><path d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z"/><path d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z"/></g></symbol><symbol id="search-icon" viewBox="0 0 512 512"><g><g><path d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474    c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323    c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848    S326.847,409.323,225.474,409.323z"/></g></g><g><g><path d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328    c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"/></g></g></symbol><symbol id="font-size-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11.246 15H4.754l-2 5H.6L7 4h2l6.4 16h-2.154l-2-5zm-.8-2L8 6.885 5.554 13h4.892zM21 12.535V12h2v8h-2v-.535a4 4 0 1 1 0-6.93zM19 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></symbol><symbol id="add-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"/></symbol><symbol id="minus-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M5 11h14v2H5z"/></symbol><symbol id="dark-theme-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/></symbol><symbol id="light-theme-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/></symbol><symbol id="reset-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.537 19.567A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10c0 2.136-.67 4.116-1.81 5.74L17 12h3a8 8 0 1 0-2.46 5.772l.997 1.795z"/></symbol><symbol id="down-icon" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path></symbol><symbol id="codepen-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.5 13.202L13 15.535v3.596L19.197 15 16.5 13.202zM14.697 12L12 10.202 9.303 12 12 13.798 14.697 12zM20 10.869L18.303 12 20 13.131V10.87zM19.197 9L13 4.869v3.596l3.5 2.333L19.197 9zM7.5 10.798L11 8.465V4.869L4.803 9 7.5 10.798zM4.803 15L11 19.131v-3.596l-3.5-2.333L4.803 15zM4 13.131L5.697 12 4 10.869v2.262zM2 9a1 1 0 0 1 .445-.832l9-6a1 1 0 0 1 1.11 0l9 6A1 1 0 0 1 22 9v6a1 1 0 0 1-.445.832l-9 6a1 1 0 0 1-1.11 0l-9-6A1 1 0 0 1 2 15V9z"/></symbol><symbol id="close-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></symbol><symbol id="menu-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></symbol></defs></svg></head><body data-theme="dark"><div class="sidebar-container"><div class="sidebar" id="sidebar"><a href="/" class="sidebar-title sidebar-title-anchor">Home</a><div class="sidebar-items-container"><div class="sidebar-section-title with-arrow" data-isopen="false" id="iq-J6O5s_b5qQhSDBuhl5"><div>Classes</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="Adobe%2520Launch.html">Adobe Launch</a></div><div class="sidebar-section-children"><a href="flightOptions.html">flightOptions</a></div><div class="sidebar-section-children"><a href="sessionStorage.html">sessionStorage</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="2SuzV1chuwEeLtt9f2Jjg"><div>Namespaces</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="flightOptions.flightDirections.html">flightDirections</a></div><div class="sidebar-section-children"><a href="flightOptions.selectedFlight.html">selectedFlight</a></div><div class="sidebar-section-children"><a href="flightOptions.selectedFlight.options.html">options</a></div><div class="sidebar-section-children"><a href="sessionStorage.analyticsData.html">analyticsData</a></div><div class="sidebar-section-children"><a href="sessionStorage.cruiseInfo.html">cruiseInfo</a></div><div class="sidebar-section-children"><a href="sessionStorage.cruiseInfoPerCabin.html">cruiseInfoPerCabin</a></div><div class="sidebar-section-children"><a href="sessionStorage.optionalAPIRequest.html">optionalAPIRequest</a></div><div class="sidebar-section-children"><a href="sessionStorage.pricingInfo.html">pricingInfo</a></div><div class="sidebar-section-children"><a href="sessionStorage.requestedBasketData.html">requestedBasketData</a></div><div class="sidebar-section-children"><a href="sessionStorage.roomsData.html">roomsData</a></div><div class="sidebar-section-children"><a href="sessionStorage.summarisedInfo.html">summarisedInfo</a></div><div class="sidebar-section-children"><a href="sessionStorage.summarisedInfo.roomDetails.html">roomDetails</a></div><div class="sidebar-section-children"><a href="sessionStorage.tripAddOn.html">tripAddOn</a></div></div></div></div></div><div class="navbar-container" id="VuAckcnZhf"><nav class="navbar"><div class="navbar-left-items"></div><div class="navbar-right-items"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#light-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div><nav></nav></nav></div><div class="toc-container"><div class="toc-content"><span class="bold">On this page</span><div id="eed4d2a0bfd64539bb9df78095dec881"></div></div></div><div class="body-wrapper"><div class="main-content"><div class="main-wrapper"><section id="source-page" class="source-page"><header><h1 id="title" class="has-anchor">launch_launch-data-elements-docs.js</h1></header><article><pre class="prettyprint source lang-js"><code>/**
+   * @name Adobe Launch#data; Web Vitals; CLS
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.cumulativeLayoutShift 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Ship ID
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+configs.shipId 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Search Response Data
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+window.configs.searchResponseData 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Cruises Recently Visited
+   * @description
+   * &lt;small>core/src/lib/dataElements/cookie.js&lt;/small>
+   * ``` 
+cookie: cruiseIds 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Adestra Account Id
+   * @description
+   * &lt;small>core/src/lib/dataElements/constant.js&lt;/small>
+   * ``` 
+900 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Adobe Target Cache State
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+window.OptimisationExperiment.Cache 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Guest Info For Booking
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.guestInfoForBooking 
+```
+   * 
+   */
+
+/**
+ * @name Adobe Launch#data; Marketing Cloud Id
+ * @description
+ * &lt;small>adobe-mcid/src/lib/dataElements/ecid.js&lt;/small>
+ *
+ *
+ */
+
+/**
+ * @name Adobe Launch#data; UTM Ad Group Id
+ * @description
+ * &lt;small>core/src/lib/dataElements/queryStringParameter.js&lt;/small>
+ *
+ *
+ */
+
+/**
+   * @name Adobe Launch#data; Adobe Launch QA Mode
+   * @description
+   * &lt;small>core/src/lib/dataElements/localStorage.js&lt;/small>
+   * ``` 
+localStorage.adobe-launch-qa-mode 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Country
+   * @description
+   * &lt;small>core/src/lib/dataElements/cookie.js&lt;/small>
+   * ``` 
+cookie: countryCode 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Show Target
+   * @description
+   * &lt;small>core/src/lib/dataElements/localStorage.js&lt;/small>
+   * ``` 
+localStorage.showTarget 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Brand
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+configs.brand 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Web Vitals; LCP
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.largestContentfulPaint 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Market
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+window.configs.locale 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; UTM Content SessionStorage
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.cuk.launch.utm_content 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Blog Link Tracking
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.cuk.launch.blog.linkTracking 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Campaign Id
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.cuk.launch.entry.campaignId 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Page Type
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+configs.template 
+```
+   * 
+   */
+
+/**
+ * @name Adobe Launch#data; Login Status
+ * @description
+ * &lt;small>core/src/lib/dataElements/conditionalValue.js&lt;/small>
+ * conditional value
+ *
+ */
+
+/**
+ * @name Adobe Launch#data; utm_term
+ * @description
+ * &lt;small>core/src/lib/dataElements/queryStringParameter.js&lt;/small>
+ *
+ *
+ */
+
+/**
+   * @name Adobe Launch#data; Link Tracking sessionStorage
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.cuk.launch.linkTracking.v2 
+```
+   * 
+   */
+
+/**
+ * @name Adobe Launch#data; utm_source
+ * @description
+ * &lt;small>core/src/lib/dataElements/queryStringParameter.js&lt;/small>
+ *
+ *
+ */
+
+/**
+   * @name Adobe Launch#data; Server
+   * @description
+   * &lt;small>core/src/lib/dataElements/pageInfo.js&lt;/small>
+   * ``` 
+hostname 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Block Target
+   * @description
+   * &lt;small>core/src/lib/dataElements/localStorage.js&lt;/small>
+   * ``` 
+localStorage.blockTarget 
+```
+   * 
+   */
+
+/**
+ * @name Adobe Launch#data; utm_medium
+ * @description
+ * &lt;small>core/src/lib/dataElements/queryStringParameter.js&lt;/small>
+ *
+ *
+ */
+
+/**
+ * @name Adobe Launch#data; UTM Campaign Id
+ * @description
+ * &lt;small>core/src/lib/dataElements/queryStringParameter.js&lt;/small>
+ *
+ *
+ */
+
+/**
+ * @name Adobe Launch#data; sessionPageViewCount
+ * @description
+ * &lt;small>core/src/lib/dataElements/visitorBehavior.js&lt;/small>
+ *
+ *
+ */
+
+/**
+ * @name Adobe Launch#data; utm_content
+ * @description
+ * &lt;small>core/src/lib/dataElements/queryStringParameter.js&lt;/small>
+ *
+ *
+ */
+
+/**
+ * @name Adobe Launch#data; s_kwcid (Clean)
+ * @description
+ * &lt;small>core/src/lib/dataElements/conditionalValue.js&lt;/small>
+ * conditional value
+ *
+ */
+
+/**
+   * @name Adobe Launch#data; Trinfo
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.trinfo 
+```
+   * 
+   */
+
+/**
+ * @name Adobe Launch#data; Random Number
+ * @description
+ * &lt;small>core/src/lib/dataElements/randomNumber.js&lt;/small>
+ *
+ *
+ */
+
+/**
+   * @name Adobe Launch#target; Country
+   * @description
+   * &lt;small>core/src/lib/dataElements/cookie.js&lt;/small>
+   * ``` 
+cookie: countryCode 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Adobe Target Delivery State
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+window.OptimisationExperiment.Delivery 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Cookie - OptanonConsent
+   * @description
+   * &lt;small>core/src/lib/dataElements/cookie.js&lt;/small>
+   * ``` 
+cookie: OptanonConsent 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; documentReferrer sessionStorage
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.documentReferrer 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Ad Group Id
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.cuk.launch.entry.adGroupId 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Login Cookie
+   * @description
+   * &lt;small>core/src/lib/dataElements/cookie.js&lt;/small>
+   * ``` 
+cookie: login_token 
+```
+   * 
+   */
+
+/**
+ * @name Adobe Launch#data; utm_campaign
+ * @description
+ * &lt;small>core/src/lib/dataElements/queryStringParameter.js&lt;/small>
+ *
+ *
+ */
+
+/**
+   * @name Adobe Launch#target; Preview Mode
+   * @description
+   * &lt;small>core/src/lib/dataElements/localStorage.js&lt;/small>
+   * ``` 
+localStorage.adobe-target-preview-mode-integrations 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Device Usage; orientationChangeTimes
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.orientationChangeTimes 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Duration
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+configs.cruiseDuration 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Web Vitals; TTFB
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.timeToFirstByte 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Adobe Target Timer
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+window.OptimisationExperiment.Timer 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Web Vitals; FID
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.firstInputDelay 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Viewport
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+window.innerWidth 
+```
+   * 
+   */
+
+/**
+ * @name Adobe Launch#data; URL Param cid
+ * @description
+ * &lt;small>core/src/lib/dataElements/queryStringParameter.js&lt;/small>
+ *
+ *
+ */
+
+/**
+   * @name Adobe Launch#data; Brand Id
+   * @description
+   * &lt;small>core/src/lib/dataElements/constant.js&lt;/small>
+   * ``` 
+poc 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Query String
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+document.location.search 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Property
+   * @description
+   * &lt;small>core/src/lib/dataElements/constant.js&lt;/small>
+   * ``` 
+98218da9-6d52-85ea-e74b-24fffa72d546 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; crmID
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+dtm_digitalData.general.marinerID 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; BBW URN SessionStorage
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.cuk.launch.bbw_urn 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Continent Code
+   * @description
+   * &lt;small>core/src/lib/dataElements/cookie.js&lt;/small>
+   * ``` 
+cookie: continentCode 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; New Booking
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+dtm_digitalData.general.transactionID 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Previous Page Name
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+_ppvPreviousPage 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Blog Page Info
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.cuk.launch.blog.pageInfo 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; UTM Term SessionStorage
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.cuk.launch.utm_term 
+```
+   * 
+   */
+
+/**
+ * @name Adobe Launch#data; UTM GCLID
+ * @description
+ * &lt;small>core/src/lib/dataElements/queryStringParameter.js&lt;/small>
+ *
+ *
+ */
+
+/**
+ * @name Adobe Launch#data; s_kwcid Param
+ * @description
+ * &lt;small>core/src/lib/dataElements/queryStringParameter.js&lt;/small>
+ *
+ *
+ */
+
+/**
+   * @name Adobe Launch#data; Phased Payments
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.isMonthlyAutoCharge 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Currency
+   * @description
+   * &lt;small>core/src/lib/dataElements/constant.js&lt;/small>
+   * ``` 
+GBP 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Basket ID it.1
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.basketId 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Landing Page URL
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.cuk.launch.entry.pageUrl 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Favourites
+   * @description
+   * &lt;small>core/src/lib/dataElements/cookie.js&lt;/small>
+   * ``` 
+cookie: favorites 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; s_kwcid
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.cuk.launch.s_kwcid 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; documentReferrer
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+document.referrer 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; UTM Source SessionStorage
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.cuk.launch.utm_source 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Payment Type
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+dtm_digitalData.general.paymentType 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; UTM Campaign SessionStorage
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.cuk.launch.utm_campaign 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Page Type
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+window.configs.template 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; UTM Medium SessionStorage
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.cuk.launch.utm_medium 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Block Evolv
+   * @description
+   * &lt;small>core/src/lib/dataElements/localStorage.js&lt;/small>
+   * ``` 
+localStorage.blockEvolv 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Blog User Interaction
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.cuk.launch.blog.userInteraction 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Market
+   * @description
+   * &lt;small>core/src/lib/dataElements/javascriptVariable.js&lt;/small>
+   * ``` 
+configs.locale 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; CID SessionStorage
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.cuk.launch.cid 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Visit Number
+   * @description
+   * &lt;small>core/src/lib/dataElements/cookie.js&lt;/small>
+   * ``` 
+cookie: _sdsat_session_count 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Web Vitals; FCP
+   * @description
+   * &lt;small>core/src/lib/dataElements/sessionStorage.js&lt;/small>
+   * ``` 
+sessionStorage.firstContentfulPaint 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Embark Port
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window._satellite.getVar("data; Page Type");
+  if (/^confirmationPage$/i.test(e)) return JSON.parse(sessionStorage.bookingDetails).departPortId;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Query String sessionStorage
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+var e = function (e, t) {
+  var n = new RegExp("[&amp;?%]" + e + "=([^&amp;]*)", "gim").exec(t);
+  return n ? t.replace(n[1], "MASKED") : t;
+};
+try {
+  return sessionStorage.getItem("cuk.launch.entry.queryString"), e("password", document.URL), e("firstname", uRL), e("lastname", uRL), e("email", uRL), e("titleDropDown", uRL);
+} catch (e) {}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Cruise Only or Flights Included
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window._satellite.getVar("data; Page Type");
+  if (/^cruiseDetailsPage/i.test(e)) {
+    if (!0 === window.configs.voyageCruiseOnly.cruiseOnly) return "cruise only";
+    if (!1 === window.configs.voyageCruiseOnly.cruiseOnly) return "flights included";
+  }
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; TimeStamp | Local
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+function e(e) {
+  return e >= 0 &amp;&amp; e &lt; 10 ? "0" + e : e + "";
+}
+var t = new Date();
+return [[e(t.getFullYear()), e(t.getMonth() + 1), e(t.getDate())].join("-"), [e(t.getHours()), e(t.getMinutes()), e(t.getSeconds())].join(":"), [e(t.toString().match(/([ +-][0-9]+)/)[1])]].join("|");
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Destination Date
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window.configs.template;
+  if (
+    (window.configs.cruiseId ||
+      (/^(paymentPage|roomSelectorPage|roomSelectorPageV2|flightOptionsPage|landTourSelectorPage|hotelSelectorPage|transferSelectorPage)$/i.test(e) &amp;&amp;
+        document.referrer
+          .match(/[a-zA-Z0-9]+.(summary|cabin)/gi)[0]
+          .replace(".summary", "")
+          .replace(".cabin", ""))) === JSON.parse(sessionStorage.roomsData).cruiseCode
+  ) {
+    var t = new Date(JSON.parse(sessionStorage.roomsData).sailingDate),
+      n = window.configs.cruiseDuration;
+    return new Date(Date.UTC(t.getUTCFullYear(), t.getUTCMonth(), t.getUTCDate() + n)).toISOString().split("T")[0];
+  }
+  return null;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Duration
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window._satellite.getVar("data; Page Type");
+  if (/^confirmationPage$/i.test(e)) return JSON.parse(sessionStorage.bookingDetails).duration;
+  if (/^(paymentPage|cruisedetailssummaryPage)$/i.test(e)) return JSON.parse(sessionStorage.analyticsData).durationDays;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; AA Campaign
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+if (_satellite.getVar("data; URL Param cid")) return _satellite.getVar("data; URL Param cid");
+if (_satellite.getVar("data; UTM Source SessionStorage")) {
+  let e = _satellite.getVar("data; UTM Source SessionStorage"),
+    t = _satellite.getVar("data; UTM Medium SessionStorage"),
+    n = _satellite.getVar("data; UTM Campaign SessionStorage"),
+    r = _satellite.getVar("data; UTM Content SessionStorage");
+  return decodeURIComponent("11" + e + ":12:13" + t + ":14:15:16" + n + ":17" + r).replace(/ /g, "");
+}
+if (_satellite.getVar("data; s_kwcid") &amp;&amp; "na" != _satellite.getVar("data; s_kwcid")) {
+  let e = "",
+    t = "";
+  return (
+    _satellite.getVar("data; documentReferrer SessionStorage").indexOf("google") > -1 &amp;&amp; (t = "af"),
+    _satellite.getVar("data; documentReferrer SessionStorage").indexOf("bing") > -1 &amp;&amp; (t = "ag"),
+    `11${t}:12${e}:13ab:14:15:16:17`
+  );
+}
+return _satellite.getVar("data; CID SessionStorage") ? _satellite.getVar("data; CID SessionStorage") : null;
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Guest Count
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  let e = 0;
+  const t = (e) => Object.values(e).reduce((e, t) => e + t),
+    { roomDetails: n } = JSON.parse(sessionStorage.summarisedInfo);
+  return (
+    n.forEach((n) => {
+      const { guestCount: r } = n;
+      e += t(r);
+    }),
+    e
+  );
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; GA Item Array - ProductView
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+return [
+  {
+    id: window.parent._satellite.getVar("voyageID") || "n/a",
+    name: window.parent._satellite.getVar("voyageName") || "n/a",
+    brand: window.parent._satellite.getVar("shipName") || window.parent.sessionStorage.shipName || "n/a",
+    category: window.parent._satellite.getVar("destName") || "n/a",
+    price: Number(dtm_digitalData.general.cruisePrice) || 0,
+    quantity: 1,
+    dimension7: window.parent.dtm_digitalData.general.depDate || "n/a",
+    dimension8: window.parent._satellite.getVar("durationDays") || "n/a",
+  },
+];
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Departure Date
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return (
+    window.configs.cruiseSailingDate ||
+    (function () {
+      var e = window.configs.template;
+      if (
+        (window.configs.cruiseId ||
+          (/^(paymentPage|roomSelectorPage|roomSelectorPageV2|flightOptionsPage|landTourSelectorPage|hotelSelectorPage|transferSelectorPage)$/gi.test(e) &amp;&amp;
+            document.referrer.match(/[a-zA-Z0-9]+.(summary|cabin)/gi)[0].replace(/.(summary|cabin)/gi, ""))) === JSON.parse(sessionStorage.roomsData).cruiseCode
+      )
+        return JSON.parse(sessionStorage.roomsData).sailingDate;
+    })()
+  );
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Cruise ID
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window._satellite.getVar("data; Page Type");
+  if (window.configs.cruiseId) return window.configs.cruiseId;
+  if (/^confirmationPage$/i.test(e)) return JSON.parse(sessionStorage.bookingDetails).cruiseId;
+  if (
+    /^(paymentPage|roomSelectorPage|roomSelectorPageV2|flightOptionsPage|landTourSelectorPage|hotelSelectorPage|transferSelectorPage)$/i.test(e) &amp;&amp;
+    document.referrer.match(/[a-zA-Z0-9]+.(summary|cabin)/gi)
+  )
+    return document.referrer.match(/[a-zA-Z0-9]+.(summary|cabin)/gi)[0].replace(/.(summary|cabin)/gi, "");
+  if (/^(paymentPage|roomSelectorPage|roomSelectorPageV2|flightOptionsPage|landTourSelectorPage|hotelSelectorPage|transferSelectorPage)$/i.test(e))
+    return JSON.parse(sessionStorage.roomsData).cruiseCode;
+  if (JSON.parse(sessionStorage.analyticsData).product[0].productID) return JSON.parse(sessionStorage.analyticsData).product[0].productID;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Destination Name
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return JSON.parse(sessionStorage.analyticsData).destName;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Departure Port Name
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window.configs.template;
+  return (window.configs.cruiseId ||
+    (/^(paymentPage|roomSelectorPage|roomSelectorPageV2|flightOptionsPage|landTourSelectorPage|hotelSelectorPage|transferSelectorPage)$/i.test(e) &amp;&amp;
+      document.referrer
+        .match(/[a-zA-Z0-9]+.(summary|cabin)/gi)[0]
+        .replace(".summary", "")
+        .replace(".cabin", ""))) === JSON.parse(sessionStorage.analyticsData).product[0].productID
+    ? JSON.parse(sessionStorage.analyticsData).depPortName
+    : null;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Brand URN
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+var e = "";
+return (
+  null != sessionStorage.userData
+    ? null != JSON.parse(sessionStorage.userData).primaryUrn
+      ? (e = JSON.parse(sessionStorage.userData).primaryUrn.toLowerCase())
+      : null != JSON.parse(sessionStorage.userData).primaryUrn
+      ? (e = JSON.parse(sessionStorage.userData).marinerId.toLowerCase())
+      : null != JSON.parse(sessionStorage.userData).urn &amp;&amp; (e = JSON.parse(sessionStorage.userData).urn.toLowerCase())
+    : null != dtm_digitalData &amp;&amp;
+      null != dtm_digitalData.general &amp;&amp;
+      null != dtm_digitalData.general.marinerID &amp;&amp;
+      "" != dtm_digitalData.general.marinerID &amp;&amp;
+      (e = dtm_digitalData.general.marinerID.toLowerCase()),
+  e
+);
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Stateroom Type
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return JSON.parse(sessionStorage.bookingDetails).confirmationDetails[0].categoryCode;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; GA Item Array - Purchase
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  const e = window._satellite.getVar("data; Cruise Id") || "n/a",
+    t = `${window._satellite.getVar("data; Product Name")} (${e})` || "n/a",
+    n = window._satellite.getVar("data; Ship Name") || "n/a",
+    r = window._satellite.getVar("data; Destination Name") || "n/a",
+    a = window._satellite.getVar("data; Payment Type") || window.sessionStorage.paymentType || "n/a",
+    o = window._satellite.getVar("data; Total Revenue") || 0,
+    i = 1,
+    s = window._satellite.getVar("data; Stateroom Type"),
+    c = window._satellite.getVar("data; Depature Date (DDMMYY)") || "n/a",
+    u = window._satellite.getVar("data; Duration") || "n/a",
+    l = window._satellite.getVar("data; Guest Count") || "n/a";
+  return [{ id: e, name: t, brand: n, category: r, variant: a, price: o, quantity: i, dimension6: s, dimension7: c, dimension8: u, dimension9: l }];
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; GA Hit Timestamp
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+function e() {
+  var e = new Date(),
+    t = -e.getTimezoneOffset(),
+    n = t >= 0 ? "+" : "-",
+    r = function (e) {
+      var t = Math.abs(Math.floor(e));
+      return (t &lt; 10 ? "0" : "") + t;
+    };
+  return (
+    e.getFullYear() +
+    "-" +
+    r(e.getMonth() + 1) +
+    "-" +
+    r(e.getDate()) +
+    "T" +
+    r(e.getHours()) +
+    ":" +
+    r(e.getMinutes()) +
+    ":" +
+    r(e.getSeconds()) +
+    "." +
+    r(e.getMilliseconds()) +
+    n +
+    r(t / 60) +
+    ":" +
+    r(t % 60)
+  );
+}
+return e();
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Guest Count
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  let e = 0;
+  const t = (e) => Object.values(e).reduce((e, t) => e + t),
+    { roomDetails: n } = JSON.parse(sessionStorage.summarisedInfo);
+  return (
+    n.forEach((n) => {
+      const { guestCount: r } = n;
+      e += t(r);
+    }),
+    e
+  );
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Room Type
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return JSON.parse(sessionStorage.summarisedInfo).roomDetails[0].roomType;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; OneTrust Consent Grouped
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  const e = [],
+    t = window._satellite.cookie.get("OptanonConsent");
+  return (
+    [
+      { KEY: "C0001:1", NAME: "Necessary" },
+      { KEY: "C0002:1", NAME: "Performance" },
+      { KEY: "C0003:1", NAME: "Functional" },
+      { KEY: "C0004:1", NAME: "Targeting" },
+    ].forEach((n) => {
+      const r = t.includes(n.KEY),
+        a = `${n.NAME}:${r ? "YES" : "NO"}`;
+      e.push(a);
+    }),
+    e.join(" | ")
+  );
+} catch (e) {}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; UTM Source SessionStorage (Clean)
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return window._satellite.getVar("data; UTM Source SessionStorage").toLowerCase().replace(/ /g, "").trim();
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Total Revenue
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window._satellite.getVar("data; Page Type");
+  if (/^(confirmationPage|paymentPage|cruiseDetailsSummaryPage)$/i.test(e)) return JSON.parse(sessionStorage.summarisedInfo).total;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; CID Source
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  let e = null;
+  if (sessionStorage.hasOwnProperty("cid")) {
+    let t = sessionStorage.cid.split("11")[1].split(":")[0];
+    t &amp;&amp; t.length > 1 &amp;&amp; (e = t);
+  }
+  return e;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; DaysSinceLastVisit
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return s.getDaysSinceLastVisit("gds");
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; URL Pathname
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+function e() {
+  var e = function (e, t) {
+      var n = new RegExp("[&amp;?%]" + e + "=([^&amp;]*)", "gim").exec(t);
+      return n ? t.replace(n[1], "MASKED") : t;
+    },
+    t = e("password", window.location.pathname);
+  return (t = e("firstname", t)), (t = e("lastname", t)), (t = e("email", t)), (t = e("titleDropDown", t));
+}
+try {
+  return e();
+} catch (e) {
+  return window.location.pathname;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Basket ID
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+const e = window.location.search;
+let t = new URLSearchParams(e).get("basketId");
+return t ? (sessionStorage.setItem("targetId", t), t) : ((t = sessionStorage.getItem("basketId")), t || ((t = new Date().valueOf()), sessionStorage.setItem("basketId", t)), t);
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Page Name
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return window.configs.pageName.replace(/-/g, "").toLowerCase();
+} catch (e) {
+  return "poc:no pagename available";
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Marnier Id
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return JSON.parse(sessionStorage.userData).marinerId;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Days Until Departure
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window.configs.cruiseSailingDate,
+    t = function () {
+      var e = window.configs.template;
+      if (
+        (window.configs.cruiseId ||
+          (/^(paymentPage|roomSelectorPage|roomSelectorPageV2|flightOptionsPage|landTourSelectorPage|hotelSelectorPage|transferSelectorPage)$/gi.test(e) &amp;&amp;
+            document.referrer.match(/[a-zA-Z0-9]+.(summary|cabin)/gi)[0].replace(/.(summary|cabin)/gi, ""))) === JSON.parse(sessionStorage.roomsData).cruiseCode
+      )
+        return JSON.parse(sessionStorage.roomsData).sailingDate;
+    },
+    n = new Date(),
+    r = n &amp;&amp; Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate()),
+    a = new Date(e || t()),
+    o = a &amp;&amp; Date.UTC(a.getUTCFullYear(), a.getUTCMonth(), a.getUTCDate()),
+    i = Math.floor((o - r) / 864e5);
+  return o ? i : null;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Clean Product Name
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return window._satellite.getVar("data; Product Name").replace(/,  d+ (Nights|N xe4chte)/gi, "");
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; bbwID
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window.location.search.toLowerCase();
+  function t(t) {
+    var n = RegExp("[?&amp;]" + t + "=([^&amp;]*)").exec(e);
+    return n &amp;&amp; decodeURIComponent(n[1].replace(/ +/g, " "));
+  }
+  return "" == e || null === t("utm_term") || (0 != t("utm_term").toLowerCase().indexOf("po-") &amp;&amp; 0 != t("utm_term").toLowerCase().indexOf("cu-"))
+    ? _satellite.getVar("data; BBW URN SessionStorage")
+      ? _satellite.getVar("data; BBW URN SessionStorage").toLowerCase()
+      : null
+    : t("utm_term").toLowerCase();
+} catch (n) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Cabin Type
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  const e = [],
+    { roomDetails: t } = JSON.parse(sessionStorage.summarisedInfo);
+  if (
+    (t.forEach((t) => {
+      const { roomType: n } = t;
+      e.push(n.toUpperCase().replace("-", ""));
+    }),
+    e.length > 0)
+  )
+    return e.join("|");
+} catch (e) {}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Title Capitalised
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  const e = window._satellite.getVar("data; Title");
+  return e.charAt(0).toUpperCase() + e.slice(1);
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Internet Explorer 11
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return !!window.MSInputMethodContext &amp;&amp; !!document.documentMode;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Transaction Id
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window._satellite.getVar("data; Page Type");
+  if (/^confirmationPage$/i.test(e)) return JSON.parse(sessionStorage.bookingDetails).confirmationDetails[0].confirmationNumber;
+} catch (e) {}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Abandoned Basket Opt Outs
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+function e(e) {
+  if (!e) return !1;
+  try {
+    JSON.parse(e);
+  } catch (e) {
+    return !1;
+  }
+  return !0;
+}
+try {
+  let t = null;
+  return e(sessionStorage.getItem("abandonedBasketOptOuts")) &amp;&amp; (t = JSON.parse(sessionStorage.getItem("abandonedBasketOptOuts"))), t;
+} catch (e) {
+  _satellite.logger.log(e);
+}
+return null;
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Ship Name
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return JSON.parse(sessionStorage.analyticsData).shipName;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Total Revenue Formatted
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window._satellite.getVar("data; Total Revenue");
+  return new Intl.NumberFormat("en-gb").format(Math.ceil(e));
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Token
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+function e(e, n) {
+  for (var r = t(n.toString(16)), a = 0; a &lt; e.length; a++) r += t((e.charCodeAt(a) ^ n).toString(16));
+  return r;
+}
+function t(e) {
+  return 1 === e.length ? "0" + e : e;
+}
+try {
+  var n = window._satellite.getVar("data; Email"),
+    r = window._satellite.getVar("data; Cruise Id"),
+    a = n.toLowerCase();
+  return e([r.toUpperCase(), a].join("|"), 32);
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Adestra Capture Id
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = new RegExp(window.location.origin),
+    t = /aem-uat/.test(e),
+    n = 40;
+  return t &amp;&amp; (n = 38), n;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Depature Date (DDMMYY)
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+function e(e) {
+  const t = new Date(e),
+    n = t.getFullYear().toString().slice(-2);
+  let r = (t.getMonth() + 1).toString(),
+    a = t.getDate().toString();
+  return 1 === r.length &amp;&amp; (r = "0" + r), 1 === a.length &amp;&amp; (a = "0" + a), r + a + n;
+}
+try {
+  return e(window.configs.cruiseSailingDate || JSON.parse(sessionStorage.roomsData).sailingDate);
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Video Name
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+function t(e) {
+  var t = e.node,
+    n = e.selector;
+  try {
+    return t.closest(n);
+  } catch (e) {
+    if ("function" == typeof Element.prototype.msMatchesSelector)
+      for (; t; ) {
+        if (Element.prototype.msMatchesSelector.call(t, n)) return t;
+        t = "SVGElement" in window &amp;&amp; t instanceof SVGElement ? t.parentNode : t.parentElement;
+      }
+  }
+  return {};
+}
+try {
+  return t({ node: e.target, selector: ".amp-video-container" }).querySelector(".amp-poster").src.split("/").pop();
+} catch (e) {}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Fare Type
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return JSON.parse(sessionStorage.roomsData).fareType;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Cruise Id
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  const e = window._satellite.getVar("data; Page Type");
+  if (window.configs.cruiseId) return window.configs.cruiseId;
+  if (/^confirmationPage$/i.test(e)) return JSON.parse(sessionStorage.bookingDetails).cruiseId;
+  if (
+    /^(paymentPage|roomSelectorPage|roomSelectorPageV2|flightOptionsPage|landTourSelectorPage|hotelSelectorPage|transferSelectorPage)$/i.test(e) &amp;&amp;
+    document.referrer.match(/[a-zA-Z0-9]+.(summary|cabin)/gi)
+  )
+    return document.referrer.match(/[a-zA-Z0-9]+.(summary|cabin)/gi)[0].replace(/.(summary|cabin)/gi, "");
+  if (/^(paymentPage|roomSelectorPage|roomSelectorPageV2|flightOptionsPage|landTourSelectorPage|hotelSelectorPage|transferSelectorPage)$/i.test(e))
+    return JSON.parse(sessionStorage.roomsData).cruiseCode;
+  if (JSON.parse(sessionStorage.analyticsData).product[0].productID) return JSON.parse(sessionStorage.analyticsData).product[0].productID;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Cruise Name
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window.configs.template;
+  return (window.configs.cruiseId ||
+    (/^(paymentPage|roomSelectorPage|roomSelectorPageV2|flightOptionsPage|landTourSelectorPage|hotelSelectorPage|transferSelectorPage)$/gi.test(e) &amp;&amp;
+      document.referrer.match(/[a-zA-Z0-9]+.(summary|cabin)/gi)[0].replace(/.(summary|cabin)/gi, ""))) === JSON.parse(sessionStorage.analyticsData).product[0].productID
+    ? JSON.parse(sessionStorage.analyticsData).product[0].productName
+    : null;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Flight Flag
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window._satellite.getVar("data; Page Type");
+  if (/^confirmationPage$/i.test(e)) return JSON.parse(sessionStorage.summarisedInfo).cukFlightDetails.showFlightLabel;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Blog Page Info Article Name
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  const e = window._satellite.getVar("data; Page Type");
+  if (/^articlePage$/i.test(e)) return JSON.parse(window._satellite.getVar("data; Blog Page Info")).articleName;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; TimeStamp | UTC
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+function e(e) {
+  return e >= 0 &amp;&amp; e &lt; 10 ? "0" + e : e + "";
+}
+var t = new Date();
+return [[e(t.getFullYear()), e(t.getMonth() + 1), e(t.getDate())].join("-"), [e(t.getHours()), e(t.getMinutes()), e(t.getSeconds())].join(":")].join("|");
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Days Until Sailing Calculated
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  if (!dtm_digitalData || !dtm_digitalData.general || !dtm_digitalData.general.depDate) return;
+  const e = dtm_digitalData.general.depDate,
+    t = 864e5,
+    n = new Date(2023, 3, 19),
+    r = new Date(e.match(/.{1,2}/g));
+  return Math.round(Math.abs((n - r) / t));
+} catch (e) {}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Product Name
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return JSON.parse(sessionStorage.analyticsData).product[0].productName;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; GA - Add UTM
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+function e(e) {
+  var n = RegExp("[?&amp;]" + e + "=([^&amp;]*)").exec(t);
+  return n &amp;&amp; decodeURIComponent(n[1].replace(/ +/g, " "));
+}
+var t = window.location.search.toLowerCase(),
+  n = "",
+  r = "",
+  a = "",
+  o = "";
+return (t.indexOf("?cid=") &amp;&amp; t.indexOf("&amp;cid=")) >= 0
+  ? ((o = (o =
+      "&amp;utm_source=" +
+      (r = (n = e("cid").toLowerCase()).split(":")[0] || "") +
+      "&amp;utm_medium=" +
+      (a = n.split(":")[2] || "") +
+      "&amp;utm_campaign=" +
+      (n.split(":")[5] || "") +
+      "&amp;utm_conent=" +
+      (n.split(":")[6] || "") +
+      "&amp;utm_term=" +
+      (n.split(":")[7] || "") +
+      "&amp;utm_id=" +
+      r +
+      a).replace(" ", "")),
+    window.location.protocol + "//" + window.location.host + window.location.pathname + t + o + window.location.hash)
+  : location.href;
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Embark Date
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window._satellite.getVar("data; Page Type");
+  if (/^(confirmationPage|paymentPage|cruisedetailssummaryPage)$/i.test(e)) return JSON.parse(sessionStorage.roomsData).sailingDate;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Entry Page Values
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = { entryPage: sessionStorage["cuk.launch.entry.page"], entryPageUrl: sessionStorage["cuk.launch.entry.pageUrl"] };
+  let a = Object.keys(e);
+  var t = "";
+  for (let o = 0; o &lt; a.length; o++) {
+    var n = a[o],
+      r = e[n];
+    r &amp;&amp; (t += n + ": " + r + " ; ");
+  }
+  return t;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Destination Port Name
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window.configs.template;
+  return (window.configs.cruiseId ||
+    (/^(paymentPage|roomSelectorPage|roomSelectorPageV2|flightOptionsPage|landTourSelectorPage|hotelSelectorPage|transferSelectorPage)$/gi.test(e) &amp;&amp;
+      document.referrer.match(/[a-zA-Z0-9]+.(summary|cabin)/gi)[0].replace(/.(summary|cabin)/gi, ""))) === JSON.parse(sessionStorage.analyticsData).product[0].productID
+    ? JSON.parse(sessionStorage.analyticsData).destPortName
+    : null;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Destination Name
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window.configs.template;
+  return (window.configs.cruiseId ||
+    (/^(paymentPage|roomSelectorPage|flightOptionsPage|landTourSelectorPage|hotelSelectorPage|transferSelectorPage)$/.test(e) &amp;&amp;
+      document.referrer.match(/[a-zA-Z0-9]+.summary/gi)[0].replace(".summary", ""))) === JSON.parse(sessionStorage.analyticsData).product[0].productID
+    ? JSON.parse(sessionStorage.analyticsData).destName
+    : null;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; First Name
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window._satellite.getVar("data; Page Type");
+  if (/^paymentPage$/i.test(e)) return JSON.parse(sessionStorage.guestInfoForBooking).firstName;
+  if (/^cruisedetailssummaryPage$/i.test(e)) return JSON.parse(sessionStorage.userData).firstName;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Family Flag
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window._satellite.getVar("data; Page Type");
+  if (/^confirmationPage$/i.test(e))
+    return 0 !== JSON.parse(sessionStorage.summarisedInfo).roomDetails[0].guestCount.child || 0 !== JSON.parse(sessionStorage.summarisedInfo).roomDetails[0].guestCount.infant;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Screen Size
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+return Math.round(100 * window.devicePixelRatio);
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Departure Port ID
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window.configs.template;
+  return (window.configs.cruiseId ||
+    (/^(paymentPage|roomSelectorPage|roomSelectorPageV2|flightOptionsPage|landTourSelectorPage|hotelSelectorPage|transferSelectorPage)$/i.test(e) &amp;&amp;
+      document.referrer
+        .match(/[a-zA-Z0-9]+.(summary|cabin)/gi)[0]
+        .replace(".summary", "")
+        .replace(".cabin", ""))) === JSON.parse(sessionStorage.optionalAPIRequest).originalSailingId
+    ? JSON.parse(sessionStorage.optionalAPIRequest).departPortId
+    : null;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; GA4 Property ID
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+return /aem-uat/.test(window.location.host) ? "G-QZTYFXR3E" : "G-0QKETQVGF7";
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Destination Port ID
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window.configs.template;
+  return (window.configs.cruiseId ||
+    (/^(paymentPage|roomSelectorPage|roomSelectorPageV2|flightOptionsPage|landTourSelectorPage|hotelSelectorPage|transferSelectorPage)$/gi.test(e) &amp;&amp;
+      document.referrer.match(/[a-zA-Z0-9]+.(summary|cabin)/gi)[0].replace(/.(summary|cabin)/gi, ""))) === JSON.parse(sessionStorage.optionalAPIRequest).originalSailingId
+    ? JSON.parse(sessionStorage.optionalAPIRequest).arrivalPortId
+    : null;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Gigya ID
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+var e = "";
+return null != sessionStorage.userData &amp;&amp; null != JSON.parse(sessionStorage.userData).UID &amp;&amp; (e = JSON.parse(sessionStorage.userData).UID), e;
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Flights Included
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window.configs.template;
+  return (window.configs.cruiseId ||
+    (/^(paymentPage|roomSelectorPage|roomSelectorPageV2|flightOptionsPage|landTourSelectorPage|hotelSelectorPage|transferSelectorPage)$/gi.test(e) &amp;&amp;
+      document.referrer.match(/[a-zA-Z0-9]+.(summary|cabin)/gi)[0].replace(/.(summary|cabin)/gi, ""))) === JSON.parse(sessionStorage.roomsData).cruiseCode
+    ? JSON.parse(sessionStorage.cruiseInfo).flightData.flightRequired
+    : null;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Fare Type
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return JSON.parse(sessionStorage.roomsData).fareType;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Floodlight Searches
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+var e = "";
+return (
+  window.location.hash.includes("destinationIds=Short-Break&amp;")
+    ? (e = "DC-11989611/srch/srch-bre+standard")
+    : window.location.hash.includes("destinationIds=Mediterranean&amp;")
+    ? (e = "DC-11989611/srch/searc0+standard")
+    : window.location.hash.includes("destinationIds=Caribbean&amp;")
+    ? (e = "DC-11989611/srch/srch-car+standard")
+    : window.location.hash.includes("destinationIds=Norwegian-Fjords&amp;") &amp;&amp; window.location.hash.includes("cruisePromoIds=ELX&amp;") &amp;&amp; (e = "DC-11989611/srch/srch-nor+standard"),
+  e
+);
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Page URL Redacted
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+function e() {
+  var e = function (e, t) {
+      var n = new RegExp("[&amp;?%]" + e + "=([^&amp;]*)", "gim").exec(t);
+      return n ? t.replace(n[1], "MASKED") : t;
+    },
+    t = e("password", document.URL);
+  return (t = e("firstname", t)), (t = e("lastname", t)), (t = e("email", t)), (t = e("titleDropDown", t)), (dtm_digitalData.general.pageURL = t), t;
+}
+try {
+  return e();
+} catch (e) {
+  return document.URL;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Page Name
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return window.configs.pageName.replace(/-/g, "").toLowerCase();
+} catch (e) {}
+return "poc:no pagename available";
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Universal Page Name
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e;
+  return 0 == (e = window.configs.pageName.replace(/-/g, "").toLowerCase().split(":").slice(2).join(":")).length &amp;&amp; (e = "homepage"), e;
+} catch (e) {}
+return "no pagename available";
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Email
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window._satellite.getVar("data; Page Type");
+  if (/^paymentPage$/i.test(e)) return JSON.parse(sessionStorage.guestInfoForBooking).email;
+  if (/^cruisedetailssummaryPage$/i.test(e)) return JSON.parse(sessionStorage.userData).emailAddress;
+  if (/^confirmationPage$/i.test(e)) return JSON.parse(sessionStorage.bookingDetails).confirmationDetails[0].emailAddress;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; cookieConsent
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+function e(e) {
+  var t = _satellite.getVar("data; Cookie - OptanonConsent"),
+    n = RegExp(e + "=([^&amp;]*)").exec(t);
+  return n &amp;&amp; decodeURIComponent(n[1].replace(/ +/g, " "));
+}
+return e("groups");
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Last Name
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window._satellite.getVar("data; Page Type");
+  if (/^paymentPage$/i.test(e)) return JSON.parse(sessionStorage.guestInfoForBooking).lastName;
+  if (/^cruisedetailssummaryPage$/i.test(e)) return JSON.parse(sessionStorage.userData).lastName;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Cabin Type
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  const e = [],
+    { roomDetails: t } = JSON.parse(sessionStorage.summarisedInfo);
+  if (
+    (t.forEach((t) => {
+      const { roomType: n } = t;
+      e.push(n.toUpperCase().replace("-", ""));
+    }),
+    e.length > 0)
+  )
+    return e.join("|");
+} catch (e) {}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; New or Return Visitor
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return console.log("new or repeat"), s.getNewRepeat(30);
+} catch (e) {
+  console.log("error", e);
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Floodlight Destinations
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+var e = "";
+switch (document.location.pathname) {
+  case "/cruise-destinations/caribbean":
+    e = "DC-11989611/destn/destn-ca+standard";
+    break;
+  case "/cruises-from-southampton":
+    e = "DC-11989611/embark/emb-soc+standard";
+    break;
+  case "/short-breaks":
+    e = "DC-11989611/destn/destn-br+standard";
+    break;
+  case "/cruise-destinations/norwegian-fjords":
+    e = "DC-11989611/destn/destn-nw+standard";
+    break;
+  case "/cruise-destinations/mediterranean":
+    e = "DC-11989611/destn/destn-md+standard";
+    break;
+  case "/deals/extra-onboard-spending-money":
+    e = "DC-11989611/deals/deal-spe+standard";
+    break;
+  case "/":
+    e = "DC-11989611/home/home+standard";
+}
+return e;
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Ship
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window._satellite.getVar("data; Page Type");
+  if (/^confirmationPage$/i.test(e)) return JSON.parse(sessionStorage.roomsData).shipCode;
+  if (window.configs.shipId) return window.configs.shipId;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Departure Date
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return (
+    window.configs.cruiseSailingDate ||
+    (function () {
+      var e = window.configs.template;
+      if (
+        (window.configs.cruiseId ||
+          (/^(paymentPage|roomSelectorPage|roomSelectorPageV2|flightOptionsPage|landTourSelectorPage|hotelSelectorPage|transferSelectorPage)$/i.test(e) &amp;&amp;
+            document.referrer
+              .match(/[a-zA-Z0-9]+.(summary|cabin)/gi)[0]
+              .replace(".summary", "")
+              .replace(".cabin", ""))) === JSON.parse(sessionStorage.roomsData).cruiseCode
+      )
+        return JSON.parse(sessionStorage.roomsData).sailingDate;
+    })()
+  );
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Target Activities
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return JSON.stringify(window.localStorage.getItem("adobe-target-user-activities")).replace(/  /g, "");
+} catch (e) {}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Embark Date Formatted
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  const e = new Date(window._satellite.getVar("data; Embark Date"));
+  return new Intl.DateTimeFormat("en-GB", { year: "numeric", month: "short", day: "numeric" }).format(e);
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Title
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  var e = window._satellite.getVar("data; Page Type");
+  if (/^paymentPage$/i.test(e)) return JSON.parse(sessionStorage.guestInfoForBooking).title;
+  if (/^cruisedetailssummaryPage$/i.test(e)) return JSON.parse(sessionStorage.userData).title;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#target; Login Status
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  if (window._satellite.cookie.get("login_token")) return "logged-in";
+} catch (e) {}
+return "logged-out";
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; Room Category
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+try {
+  return JSON.parse(sessionStorage.summarisedInfo).roomDetails[0].roomCategory;
+} catch (e) {
+  return null;
+}
+ 
+```
+   * 
+   */
+
+/**
+   * @name Adobe Launch#data; AA Report Suite
+   * @description
+   * &lt;small>core/src/lib/dataElements/customCode.js&lt;/small>
+   * ``` 
+var e = "crbrpocruisesdevgb";
+return "www.pocruises.com" === location.hostname &amp;&amp; (e = "crbrpocruisesprodgb"), e;
+ 
+```
+   * 
+   */
+</code></pre></article></section></div></div></div><div class="search-container" id="PkfLWpAbet" style="display:none"><div class="wrapper" id="iCxFxjkHbP"><button class="icon-button search-close-button" id="VjLlGakifb" aria-label="close search"><svg><use xlink:href="#close-icon"></use></svg></button><div class="search-box-c"><svg><use xlink:href="#search-icon"></use></svg> <input type="text" id="vpcKVYIppa" class="search-input" placeholder="Search..." autofocus></div><div class="search-result-c" id="fWwVHRuDuN"><span class="search-result-c-text">Type anything to view search result</span></div></div></div><div class="mobile-menu-icon-container"><button class="icon-button" id="mobile-menu" data-isopen="false" aria-label="menu"><svg><use xlink:href="#menu-icon"></use></svg></button></div><div id="mobile-sidebar" class="mobile-sidebar-container"><div class="mobile-sidebar-wrapper"><a href="/" class="sidebar-title sidebar-title-anchor">Home</a><div class="mobile-nav-links"></div><div class="mobile-sidebar-items-c"><div class="sidebar-section-title with-arrow" data-isopen="false" id="iq-J6O5s_b5qQhSDBuhl5"><div>Classes</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="Adobe%2520Launch.html">Adobe Launch</a></div><div class="sidebar-section-children"><a href="flightOptions.html">flightOptions</a></div><div class="sidebar-section-children"><a href="sessionStorage.html">sessionStorage</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="2SuzV1chuwEeLtt9f2Jjg"><div>Namespaces</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="flightOptions.flightDirections.html">flightDirections</a></div><div class="sidebar-section-children"><a href="flightOptions.selectedFlight.html">selectedFlight</a></div><div class="sidebar-section-children"><a href="flightOptions.selectedFlight.options.html">options</a></div><div class="sidebar-section-children"><a href="sessionStorage.analyticsData.html">analyticsData</a></div><div class="sidebar-section-children"><a href="sessionStorage.cruiseInfo.html">cruiseInfo</a></div><div class="sidebar-section-children"><a href="sessionStorage.cruiseInfoPerCabin.html">cruiseInfoPerCabin</a></div><div class="sidebar-section-children"><a href="sessionStorage.optionalAPIRequest.html">optionalAPIRequest</a></div><div class="sidebar-section-children"><a href="sessionStorage.pricingInfo.html">pricingInfo</a></div><div class="sidebar-section-children"><a href="sessionStorage.requestedBasketData.html">requestedBasketData</a></div><div class="sidebar-section-children"><a href="sessionStorage.roomsData.html">roomsData</a></div><div class="sidebar-section-children"><a href="sessionStorage.summarisedInfo.html">summarisedInfo</a></div><div class="sidebar-section-children"><a href="sessionStorage.summarisedInfo.roomDetails.html">roomDetails</a></div><div class="sidebar-section-children"><a href="sessionStorage.tripAddOn.html">tripAddOn</a></div></div></div><div class="mobile-navbar-actions"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#light-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div></div></div><script type="text/javascript" src="scripts/core.min.js"></script><script src="scripts/search.min.js" defer="defer"></script><script src="scripts/third-party/fuse.js" defer="defer"></script><script type="text/javascript">var tocbotInstance=tocbot.init({tocSelector:"#eed4d2a0bfd64539bb9df78095dec881",contentSelector:".main-content",headingSelector:"h1, h2, h3",hasInnerContainers:!0,scrollContainer:".main-content",headingsOffset:130,onClick:bringLinkToView})</script></body></html>
